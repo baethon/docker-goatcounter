@@ -11,7 +11,7 @@ OPTS="$OPTS -auth email:$GOATCOUNTER_EMAIL"
 OPTS="$OPTS -db $GOATCOUNTER_DB"
 
 if [ -n "$GOATCOUNTER_SMTP" ]; then
-  OPTS="$OPTS -smtp smtp://$GOATCOUNTER_SMTP"
+  OPTS="$OPTS -smtp $GOATCOUNTER_SMTP"
 fi
 
 if [ -n "$GOATCOUNTER_DEBUG" ]; then
