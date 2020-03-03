@@ -1,8 +1,10 @@
 FROM golang:buster AS build
 
-# RUN apt updaapk add --no-cache git gcc libc-dev
+ARG GIT_CI_REF=master
+
 RUN git clone https://github.com/zgoat/goatcounter.git
 RUN cd goatcounter \
+  && git checkout $GIT_CI_REF \
   && go build ./cmd/goatcounter
 
 FROM debian:buster-slim
@@ -18,9 +20,10 @@ RUN apt-get update \
 
 COPY --from=build /go/goatcounter/goatcounter /usr/bin/goatcounter
 COPY goatcounter.sh ./
-COPY goatcounter-init.sh /usr/bin/goatcounter-init
+COPY entrypoint.sh /entrypoint.sh
 
 VOLUME ["/goatcounter/db"]
 EXPOSE 8080
 
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/goatcounter/goatcounter.sh"]

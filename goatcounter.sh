@@ -4,7 +4,6 @@ set -e
 
 declare OPTS=""
 
-OPTS="$OPTS -automigrate"
 OPTS="$OPTS -listen $GOATCOUNTER_LISTEN"
 OPTS="$OPTS -tls none"
 OPTS="$OPTS -auth email:$GOATCOUNTER_EMAIL"
