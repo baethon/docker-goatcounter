@@ -7,7 +7,8 @@ Unofficial Docker image for [goatcounter](https://github.com/zgoat/goatcounter) 
 ```bash
 docker run --name goatcounter \
   -e GOATCOUNTER_DOMAIN=stats.domain.com \
-  -e GOATCOUNTER_EMAIL=admin@domain.com
+  -e GOATCOUNTER_EMAIL=admin@domain.com \
+  baethon/goatcounter
 ```
 
 This command will start a single instance with pre-configured `stats.domain.com` site.
@@ -30,17 +31,17 @@ It's used to create the initial site and is passed as an `-auth` option to the `
 
 This optional environment variable defines the SMTP server (e.g., `smtp://user:pass@server.com:587`) which will be used by the server. 
 
-_Default:_ (empty) - print email contents to stdout
+_Default:_ `stdout` - print email contents to stdout
 
 ### `GOATCOUNTER_DB`
-
-_Default:_ `sqlite:///goatcounter/db/goatconter.sqlite3`
 
 This optional environment variable defines the location of the database. By default, the server will use SQLite database which is recommended solution. 
 
 It's possible to use the Postgres DB however, the image was not tested against it.  
 
 Don't change this value unless you know what you're doing.
+
+_Default:_ `sqlite:///goatcounter/db/goatconter.sqlite3`
 
 ## Troubleshooting
 
