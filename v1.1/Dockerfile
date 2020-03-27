@@ -4,7 +4,7 @@ ARG GIT_CI_REF=v1.1.*
 
 RUN git clone https://github.com/zgoat/goatcounter.git
 RUN cd goatcounter \
-  && git checkout $(git describe --match "$GIT_CI_REF" --abbrev=0 HEAD) \
+  && git checkout $(git describe --match "$GIT_CI_REF" --abbrev=0 --tags HEAD) \
   && go build ./cmd/goatcounter
 
 FROM debian:buster-slim
