@@ -1,8 +1,9 @@
 FROM golang:buster AS build
 
 ARG GIT_CI_REF=v1.3.*
+ARG GIT_BRANCH=release-1.3
 
-RUN git clone https://github.com/zgoat/goatcounter.git
+RUN git clone -b "$GIT_BRANCH" --single-branch https://github.com/zgoat/goatcounter.git
 RUN cd goatcounter \
   && git checkout $(git describe --match "$GIT_CI_REF" --abbrev=0 --tags HEAD) \
   && go build ./cmd/goatcounter
