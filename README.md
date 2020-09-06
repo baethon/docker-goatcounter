@@ -27,6 +27,12 @@ This mandatory environment variable defines the e-mail address of the admin user
 
 It's used to create the initial site and is passed as an `-auth` option to the `serve` command.
 
+### `GOATCOUNTER_PASSWORD`
+
+_Available since v1.4_.
+
+This mandatory environment variable defines the password of the admin user.
+
 ### `GOATCOUNTER_SMTP`
 
 This optional environment variable defines the SMTP server (e.g., `smtp://user:pass@server.com:587`) which will be used by the server. 
