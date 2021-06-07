@@ -1,6 +1,6 @@
 FROM golang:buster AS build
 
-ARG GIT_CI_REF=master
+ARG GIT_CI_REF=release-2.0
 
 RUN git clone https://github.com/zgoat/goatcounter.git
 RUN cd goatcounter \
