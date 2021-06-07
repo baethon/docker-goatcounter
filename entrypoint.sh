@@ -4,7 +4,7 @@ set -eu
 
 migrate_db ()
 {
-  goatcounter migrate \
+  goatcounter db migrate \
     -createdb \
     -db "$GOATCOUNTER_DB" \
     all
@@ -12,7 +12,7 @@ migrate_db ()
 
 create_site ()
 {
-  goatcounter create \
+  goatcounter db create \
     -domain "$GOATCOUNTER_DOMAIN" \
     -email "$GOATCOUNTER_EMAIL" \
     -password "$GOATCOUNTER_PASSWORD" \
