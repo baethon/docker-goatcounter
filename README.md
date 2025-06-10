@@ -2,6 +2,11 @@
 
 Unofficial Docker image for [goatcounter](https://github.com/zgoat/goatcounter) - simple web statistics
 
+> [!IMPORTANT]
+> This repository is no longer maintained.
+> 
+> Please use the [official GoatCounter Docker image](https://hub.docker.com/r/arp242/goatcounter) instead.
+
 ## How to use this image
 
 ```bash
